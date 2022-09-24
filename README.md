@@ -43,9 +43,20 @@ cd ..
 
 The application will run on http://localhost:1234, which you can navigate to in your browser.
 
-## How to use :
+## How to use 
 
-## And next ?
+Go to http://localhost:1234
+<img width="1086" alt="image" src="https://user-images.githubusercontent.com/34569321/192106082-544a1826-412e-41ff-a955-025720768ca2.png">
+1. Connect your ledger to your computer
+2. Launch the Etherum App on your ledger
+3. Choose your connection type (USB or HID)
+4. Click on "hash the message"
+5. Accept and sign the message on your Ledger
+
+
+
+
+## What next ?
 
 Frontend:
 
