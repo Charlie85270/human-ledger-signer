@@ -6,51 +6,24 @@ Creating an additional way for verifying humanity using Ledger Nano X/S devices 
 
 ## How It Works:
 
-When using the Plugin, users are invited to sign a message with their Nano device.
-
-After signing the message, the hash of the message and the address of the device are sent to the backend, which checks if the hash and the address match the signed message.
-
-The backend then returns a hash and a timestamp that proves that the message has been signed by the ledger owner.
+The user is invited to connect his ledger in USB, then we open a WebSocket session with the device and process the genuine check (Informations are verified via the Ledger official HSM [more informations about genuine check here](https://support.ledger.com/hc/en-us/articles/4404382029329-Check-hardware-integrity?support=true)) . All libraries used are the officials from ledger repository.
 
 ## Install Dependencies & Run Backend/Frontend
 
-Backend dependencies
-
 ```bash
-
-cd backend/
-
-npm install
-
-node server.js
-
-
-```
-
-Frontend dependencies
-
-```bash
-
-cd front/
-
-npm install
-
-npm run start
-
-cd ..
-
+yarn install
+yarn start
 ```
 
 The application will run on http://localhost:1234, which you can navigate to in your browser.
 
-## How to use :
-
 ## And next ?
 
-Frontend:
+The genuine check of the ledger is done on the client side (browser + device) and with the HSM server of Ledger.
 
-Create a NPM module/component that can be easy integrated on React application
+But it's impossible for us to verify in our server side that the device is really a genuine.
+To do that, several possibilities can be explore :
 
-Backend:
-
-Creating a smart contract to verify on-chain the signature.
+- Create our own HSM server to verify the genuine informations
+- Create our own certificate and authority and push it into the ledger
+- Create an official Human-Protocol Ledger application to handle the signature and process the verifications
